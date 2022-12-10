@@ -1,1 +1,2 @@
 # knight-travails
+This Odin project builds on our knowledge of search trees/graphs and traversal algorithms (DFS, BFS, ordered). Here, given a standard chess board (8x8 squares), we were to build a function that calculates the shortest path a knight could take from one square to any other square on the board. I accomplished it by building a graph of possible moves and traversing it with BFS.
