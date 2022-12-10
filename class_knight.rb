@@ -17,7 +17,7 @@ class Knight
       square = queue.shift()
       break if square.pos == dest_pos
 
-      queue.push(square.children).flatten! unless square.children.nil?
+      queue += square.children unless square.children.nil?
     end
 
     until square.nil?
@@ -45,7 +45,7 @@ class Knight
         
       node = queue.shift()
 
-      queue.push(node.children).flatten! unless node.children.nil?
+      queue += node.children unless node.children.nil?
     end
 
     return level_ordered_array unless block_given?
@@ -58,8 +58,8 @@ class Knight
     count = 1
     until queue.empty?
       current_square = queue.shift()
-      current_square.children = get_possible_moves(current_square)
-      queue.push(current_square.children).flatten!
+      current_square.children += get_possible_moves(current_square)
+      queue += current_square.children
       count += 1
       break if count > 585
     end

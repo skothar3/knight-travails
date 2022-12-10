@@ -3,7 +3,7 @@ class Square
   @@N = 0
   def initialize(pos, parent = nil)
     @pos = pos
-    @children = nil
+    @children = []
     @parent = parent
     @@N += 1
   end
